@@ -2,9 +2,9 @@
 
 function SuperQuality() {
     return (
-        <div>
+        <section className="border-2 border-orange-500">
             SuperQuality
-        </div>
+        </section>
     )
 }
 
