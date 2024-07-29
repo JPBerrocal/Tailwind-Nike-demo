@@ -1,14 +1,24 @@
 
-function Button({ label, iconURL }) {
+function Button({ label, iconURL, backgroundColor, borderColor, textColor }) {
     return (
-        <button className="flex justify-center items-center gap-2 px-7 py-4 border font-montserrat text-lg leading-none bg-coral-red rounded-full text-white border-r-coral-red">
-            {label}
-            <img
-                src={iconURL}
-                alt="arrow right icon"
-                className="ml-2 rounded-ful w-5 h-5"
+        <button className={`flex justify-center items-center gap-2 px-7 py-4 border font-montserrat text-lg leading-none rounded-full
+        ${backgroundColor
+                ? `${backgroundColor} ${borderColor} ${textColor}`
+                : 'bg-coral-red text-white border-coral-red'
 
-            />
+            }`}>
+            {label}
+            {
+                iconURL && (
+
+                    <img
+                        src={iconURL}
+                        alt="arrow right icon"
+                        className="ml-2 rounded-ful w-5 h-5"
+
+                    />
+                )
+            }
         </button>
     )
 }
